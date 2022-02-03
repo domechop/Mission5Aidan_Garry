@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "The Joel Hilton Film Collection";
+}
+
+<!--Add title-->
+<h1>The Joel Hilton Film Collection</h1>
+<!--Add img of Joel Hilton-->
+<img src="~/img/JoelHiltonHeadshot.jpg" />
+
+<div>
+    <!--Connect form link -->
+    <a asp-controller="Home" asp-action="MovieForm">Add a movie to Joel's data base!</a>
+</div>
+
+<div>
+    <!--Connect to movie table-->
+    <a asp-action="MovieTable">Movie Table</a>
+</div>

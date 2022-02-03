@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Delete Movie Form";
+}
+@model MovieFormModel
+<!--add question to make sure they want to delete-->
+<h2>Confirm Deletion</h2>
+<h3>Are you sure you want to delete @Model.Title?</h3>
+
+<!--add button to delete-->
+<form method="post" asp-controller="Home" asp-action="Delete">
+    <button type="submit">Delete</button>
+    <!--send them back to movietable if they want to cancel through cancel button-->
+    <a asp-controller="Home" asp-action="MovieTable" class="btn btn-primary">Cancel</a>
+    <!--add hidden id for controller-->
+    <input type="hidden" asp-for="MovieID" />
+</form>

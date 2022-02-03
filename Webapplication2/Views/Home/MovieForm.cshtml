@@ -1,0 +1,52 @@
+﻿@{
+    <!--Add title -->
+    ViewData["Title"] = "Movie Form";
+}
+
+@model Webapplication2.Models.MovieFormModel
+<h1>Fill out Movie Form for Joel's Database.</h1>
+<!--create form to enter in movies-->
+<div>
+    <form method="post">
+        <label asp-for="CategoryID">Category</label>
+        <select asp-for="CategoryID">
+            <option value="">Select a Category</option>
+            @foreach (Category c in ViewBag.Categories)
+            {
+                <option value="@c.CategoryID">@c.CategoryName</option>
+            }
+        </select>
+
+        <label asp-for="Title">Title</label>
+        <input asp-for="Title" />
+
+        <label asp-for="Year">Year</label>
+        <input asp-for="Year" />
+
+        <label asp-for="Director">Director</label>
+        <input asp-for="Director" />
+
+        <label asp-for="Rating">Rating</label>
+        <select asp-for="Rating">
+            <option value="0">G</option>
+            <option value="1">PG</option>
+            <option value="2">PG-13</option>
+            <option value="3">R</option>
+        </select>
+
+        <label asp-for="Edited">Edited</label>
+        <select asp-for="Edited">
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+        </select>
+
+        <label asp-for="LentTo">Lent To</label>
+        <input asp-for="LentTo" />
+
+        <label asp-for="Notes">Notes</label>
+        <input asp-for="Notes" />
+        <!--Add asp validation for submit button-->
+        <button id="btnSend" type = "submit">Submit</button>
+        <div asp-validation-summary="All"></div>
+    </form>
+</div>
